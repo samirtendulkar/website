@@ -1,0 +1,13 @@
+{% extends 'music/base.html' %}
+{% block title %}Register{% endblock %}
+{% block body %}
+
+<h2>Add Albums</h2>
+<form action="" method="post" class="form-horizontal" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% include 'music/form-template.html' %}
+    <input type="submit" value="Save" class="btn btn-primary"/>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'music/base.html' %}
+{% block title %}Album Details{% endblock %}
+{% block body %}
+
+<h2>Please sign in </h2>
+{% if form.errors %}
+    <p>Your username and password don't match please try again </p>
+{% endif %}
+<form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input class="btn-btn-primary" type="submit" value="Login" />
+    <input type="hidden" name="next" value="{{next}}" />
+
+</form>
+
+{% endblock %}
